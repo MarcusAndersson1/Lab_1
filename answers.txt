@@ -4,9 +4,9 @@
 *******************************************************************************/
 
 Group members:
-- [...]
-- [...]
-- [...]
+- [Marcus Andersson]
+- [Jonatan Andersson]
+- [Richard Novenius}
 
 /******************************************************************************
 ** Task: Figuring out the complexity
@@ -18,24 +18,28 @@ Group members:
 
 Insertion.java on:
 
-- random inputs:      [Quadratic] [Faster than quadratic]
-- 95% sorted inputs:  [Quadratic] [Faster than quadratic]
-- sorted inputs:      [Quadratic] [Faster than quadratic]
+- random inputs:      [quadratic]
+- 95% sorted inputs:  [quadratic]
+- sorted inputs:      [Faster than quadratic]
 
 Quick.java on:
 
-- random inputs:      [Quadratic] [Faster than quadratic]
-- 95% sorted inputs:  [Quadratic] [Faster than quadratic]
-- sorted inputs:      [Quadratic] [Faster than quadratic]
+- random inputs:      [Faster than quadratic]
+- 95% sorted inputs:  [Faster than quadratic]
+- sorted inputs:      [quadratic]
 
 Merge.java on:
 
-- random inputs:      [Quadratic] [Faster than quadratic]
-- 95% sorted inputs:  [Quadratic] [Faster than quadratic]
-- sorted inputs:      Faster than quadratic
+- random inputs:      [Faster than quadratic]
+- 95% sorted inputs:  [Faster than quadratic]
+- sorted inputs:      [Faster than quadratic]
 
 /******************************************************************************
-** 2. How did you check if an algorithm had quadratic complexity or not?
+** 2.
+always looking on high values 10 000 : 100 000
+if(t2 <  ((size 2 / size 1) ^2) * t1) {
+complexity faster then quadratic
+}
 ******************************************************************************/
 
 [...]
@@ -48,11 +52,12 @@ Merge.java on:
 ******************************************************************************/
 
 Shuffling the array first:
-[no] [yes+reason]
+[Yes] [The pivot is more likely to be places in the middle of the array if the array is shuffled,
+a sorted array it is likely that the pivot end up in the beginning of the array]
 
 
 Median-of-three pivot selection:
-[no] [yes+reason]
+[yes] [because pivot is no longer in the first index of the array]
 
 
 Insertion sort for small arrays:
