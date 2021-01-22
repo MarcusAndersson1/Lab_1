@@ -13,7 +13,9 @@ public class Bench {
      */
     public static void main(final String[] args) {
         //No improvements
-        executionTimeReport("Quick.java: quicksort with no improvements", new Quick(false, false, 0)::sort);
+     //   executionTimeReport("Quick.java: quicksort with no improvements", new Quick(false, false, 110)::sort);
+        executionTimeReport("Quick.java: quicksort with all optimizations", new Quick(false, true, 25)::sort);
+        //executionTimeReport("Quick.java: quicksort with insertion improvements", new Quick(false, false, 25)::sort);
 
         //One improvement
     //  executionTimeReport("Quick.java: quicksort with shuffleFirst", new Quick(true, false, 0)::sort);
@@ -27,8 +29,8 @@ public class Bench {
 
         //All improvements
      //  executionTimeReport("Quick.java: quicksort with all improvements", new Quick(true, true, 25)::sort);
-       executionTimeReport("Insertion.java: insertion sort", Insertion::sort);
-       executionTimeReport("Merge.java: merge sort", Merge::sort);
+        executionTimeReport("Insertion.java: insertion sort", Insertion::sort);
+        executionTimeReport("Merge.java: merge sort", Merge::sort);
 
         // If you want to compare against an industrial-strength algorithm:
         //executionTimeReport("Arrays.sort: Java built-in sorting", Arrays::sort);
@@ -36,7 +38,7 @@ public class Bench {
 
     // The sample sizes and kinds randomness (0-100) the benchmarking program uses.
     // You can play around with different values!
-    private static final int[] SAMPLE_SIZES = new int[] {10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 300, 1000, 3000, 10000, 30000, 100000, };
+    private static final int[] SAMPLE_SIZES = new int[] {10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 1000, 3000, 10000, 30000, 100000};
     private static final int[] RANDOMNESS = new int[] {100, 5, 0};
 
     //

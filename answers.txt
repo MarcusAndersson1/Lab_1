@@ -65,7 +65,7 @@ values get selected using the medianOfThree method, but since you extract the me
 
 
 Insertion sort for small arrays:
-[yes, ]
+[yes, insertion sort is faster for small arrays since you dont have to call the sorting function recursively, you dont have to divide and conquer small small problems]
 
 /******************************************************************************
 ** 4. What is a good cutoff to use for insertion sort?
@@ -83,7 +83,9 @@ and saw that insertion sort is only faster size < 100, after that we checked 10,
 ** 5. Which combination of improvements gives the best performance?
 ******************************************************************************/
 
-[]
+[implementation of median of three, no shuffle and 25 cut off length gave the best result, somewhat improved on all test cases but the sorted is much faster
+5 times as fast as rndm, and 2000x as fast as no improvements. Is good to have sorted arrays very fast if you just want to check if the array is sorted, severely reduces
+computing costs.]
 
 /******************************************************************************
 ** Appendix: General information
@@ -91,9 +93,9 @@ and saw that insertion sort is only faster size < 100, after that we checked 10,
 ** A. Approximately how many hours did you spend on the assignment?
 ******************************************************************************/
 
-[Richard Novenius]:  [3 hours]
-[Marcus Andersson]:  [3 hours]
-[Jonatan Andersson]: [3 hours]
+[Richard Novenius]:  [5 hours]
+[Marcus Andersson]:  [5 hours]
+[Jonatan Andersson]: [5 hours]
 
 
 /******************************************************************************
