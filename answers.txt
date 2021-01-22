@@ -4,9 +4,9 @@
 *******************************************************************************/
 
 Group members:
-- [...]
-- [...]
-- [...]
+- [Richard Novenius]
+- [Marcus Andersson]
+- [Jonatan Andersson]
 
 /******************************************************************************
 ** Task: Figuring out the complexity
@@ -16,29 +16,32 @@ Group members:
 **    You only have to decide between quadratic or faster than quadratic.
 ******************************************************************************/
 
-Insertion.java on:
-
-- random inputs:      [Quadratic] [Faster than quadratic]
-- 95% sorted inputs:  [Quadratic] [Faster than quadratic]
-- sorted inputs:      [Quadratic] [Faster than quadratic]
-
 Quick.java on:
 
-- random inputs:      [Quadratic] [Faster than quadratic]
-- 95% sorted inputs:  [Quadratic] [Faster than quadratic]
-- sorted inputs:      [Quadratic] [Faster than quadratic]
+- random inputs:      [Faster than quadratic]
+- 95% sorted inputs:  [Faster than quadratic]
+- sorted inputs:      [Quadratic]
+
+Insertion.java on:
+
+- random inputs:      [Quadratic]
+- 95% sorted inputs:  [Quadratic]
+- sorted inputs:      [Faster than quadratic]
 
 Merge.java on:
 
-- random inputs:      [Quadratic] [Faster than quadratic]
-- 95% sorted inputs:  [Quadratic] [Faster than quadratic]
-- sorted inputs:      Faster than quadratic
+- random inputs:      [Faster than quadratic]
+- 95% sorted inputs:  [Faster than quadratic]
+- sorted inputs:      [Faster than quadratic]
 
 /******************************************************************************
 ** 2. How did you check if an algorithm had quadratic complexity or not?
 ******************************************************************************/
 
-[...]
+[always looking on high values 10 000 : 100 000
+t = time
+if(t2 < ((size 2 / size 1) ^2) * t1) {
+complexity faster then quadratic}]
 
 /******************************************************************************
 ** Task: Improving quicksort
@@ -48,15 +51,21 @@ Merge.java on:
 ******************************************************************************/
 
 Shuffling the array first:
-[no] [yes+reason]
+[yes, if we choose index 0 (a[lo]) as our pivot in a sorted array this ensures that the pivot is always the lowest value in the array.
+In other words every other value will be higher and therefore placed on the right side of the array with n-length when sorting.
+In a pre-shuffled array the pivot is random and therefore just as likely to get a median value as a min/max value,
+which yields the same results or similar results as the random column]
 
 
 Median-of-three pivot selection:
-[no] [yes+reason]
+[yes, in a pre-sorted array this would always set the pivot as the median value in the array
+(in other words having anything on both sides of the pivot being in a correct position) and therefore remove the need for swapping.
+In a pre-shuffled array this would in theory give the same results as a randomly sorted, it all depends on which three
+values get selected using the medianOfThree method, but since you extract the median]
 
 
 Insertion sort for small arrays:
-[no] [yes+reason]
+[yes, ]
 
 /******************************************************************************
 ** 4. What is a good cutoff to use for insertion sort?
@@ -64,13 +73,17 @@ Insertion sort for small arrays:
 **    Remember that you should try to find the answer in a systematic way.
 ******************************************************************************/
 
-[...]
+[On the testing computer the ideal cutoff value is 25,
+since this value changes the compiling time quite a bit if the cutoff frequency is raised/lowered even slightly.
+We saw that by looking at the random column on both insertion sort and quick sort (without any implementation)
+one could see that insertion sort is faster than quicksort when size = 10 but not when size = 100, afterwards we included the compiling time for size 20-90, run the code a couple of times
+and saw that insertion sort is only faster size < 100, after that we checked 10, 20, 30, 40, 50 and 60, fined tune it and found the cutoff value 25]
 
 /******************************************************************************
 ** 5. Which combination of improvements gives the best performance?
 ******************************************************************************/
 
-[...]
+[]
 
 /******************************************************************************
 ** Appendix: General information
@@ -78,16 +91,18 @@ Insertion sort for small arrays:
 ** A. Approximately how many hours did you spend on the assignment?
 ******************************************************************************/
 
-[..group member..]:  [..hours..]
-[..group member..]:  [..hours..]
-[..group member..]:  [..hours..]
+[Richard Novenius]:  [3 hours]
+[Marcus Andersson]:  [3 hours]
+[Jonatan Andersson]: [3 hours]
 
 
 /******************************************************************************
 ** B. Are there any known bugs / limitations?
 ******************************************************************************/
 
-[...]
+[The cutoff value when implementing insertion sort varies between computers,
+which means that each lab-member will have a different "optimal" value when running the algorithm.
+This is not a bug but a limitation]
 
 /******************************************************************************
 ** C. Did you collaborate with any other students on this lab?
@@ -96,13 +111,14 @@ Insertion sort for small arrays:
 **    may have used in creating your design.
 ******************************************************************************/
 
-[...]
+[No, we did not collaborate with any other group.]
 
 /******************************************************************************
 ** D. Describe any serious problems you encountered.                    
 ******************************************************************************/
 
-[...]
+[A bug similar to the one specified in the instructions was encountered in Bench.java,
+however we solved this issue by starting from scratch and following the instructions carefully.]
 
 /******************************************************************************
 ** E. List any other comments here.
@@ -110,4 +126,4 @@ Insertion sort for small arrays:
 **    from doing the assignment, and whether you enjoyed it.                                             
 ******************************************************************************/
 
-[...]
+[Null]
