@@ -65,14 +65,15 @@ values get selected using the medianOfThree method, but since you extract the me
 
 
 Insertion sort for small arrays:
-[yes, insertion sort is faster for small arrays since you dont have to call the sorting function recursively, you dont have to divide and conquer small small problems]
+[no, insertion sort is faster for small arrays since you dont have to call the sorting function recursively, you dont
+have to divide and conquer small small problems this is a linear improvement]
 
 /******************************************************************************
 ** 4. What is a good cutoff to use for insertion sort?
 **    Explain briefly how you came to this answer.
 **    Remember that you should try to find the answer in a systematic way.
 ******************************************************************************/
-
+!EDIT after implementing cut off value correctly we found ideal cut off value was 50!
 [On the testing computer the ideal cutoff value is 25,
 since this value changes the compiling time quite a bit if the cutoff frequency is raised/lowered even slightly.
 We saw that by looking at the random column on both insertion sort and quick sort (without any implementation)

@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *  For additional documentation on this implementation of merge sort,
  *  see <a href="https://algs4.cs.princeton.edu/22mergesort">Section 2.2</a>
@@ -23,6 +26,7 @@ public class Merge {
         sort(a, aux, mid + 1, hi);
 
         merge(a, aux, lo, mid, hi);
+
     }
 
     // stably merge a[lo..mid] with a[mid+1..hi] using aux[lo..hi]

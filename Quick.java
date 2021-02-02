@@ -49,16 +49,16 @@ public class Quick {
         if (hi <= lo) return;
 
         // TODO: check if the size of a[lo..hi] is below the cutoff value
-        if (a.length < insertionSortCutoff) {
+        if (hi-lo < insertionSortCutoff) {
             Insertion.sort(a, lo, hi);
             // TODO: Switch to insertion sort.
           //  throw new UnsupportedOperationException("to be implemented");
+        }else {
+            int j = partition(a, lo, hi);
+            sort(a, lo, j - 1);
+            sort(a, j + 1, hi);
+            assert Insertion.isSorted(a, lo, hi);
         }
-
-        int j = partition(a, lo, hi);
-        sort(a, lo, j-1);
-        sort(a, j+1, hi);
-        assert Insertion.isSorted(a, lo, hi);
     }
 
     // Partition the subarray a[lo..hi] so that
@@ -92,11 +92,11 @@ public class Quick {
                 return lo;
 
         // the main loop
-        while (i < j) {
-            exchange(a, i, j);
-            while (a[++i] < pivot);
-            while (pivot < a[--j]);
-        }
+                while (i < j) {
+                    exchange(a, i, j);
+                    while (a[++i] < pivot);
+                    while (pivot < a[--j]);
+                }
 
         // Put pivot item v at a[j].
         exchange(a, lo, j);
